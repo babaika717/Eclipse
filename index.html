@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="lib/slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="lib/simplebox/simplebox.css">
 </head>
 <body>
 <div class="part-1">
@@ -27,7 +28,7 @@
             <h3>Письменные и устные переводы для вашего бизнеса</h3>
             <h1>+7 /495/ 223 92 26</h1>
             <p>info@buro-eclipse.ru</p>
-            <button type="button" class="callback">
+            <button id="callback" type="button" class="callback">
                 <span>обратный звонок</span>
             </button>
         </div>
@@ -39,27 +40,27 @@
                 <div class="icons">
                     <div class="icon">
                         <img src="assets/images/icon1.png" alt="study">
-                        <p>Более 5 лет на рынке</p>
+                        <p>Более 5 лет<br> на рынке</p>
                     </div>
                     <div class="icon">
                         <img src="assets/images/icon2.png" alt="certificate">
-                        <p>Сертификат ISO</p>
+                        <p>Сертификат<br> ISO</p>
                     </div>
                     <div class="icon">
                         <img src="assets/images/icon3.png" alt="handshake">
-                        <p>Член международной организации GALA</p>
+                        <p>Член международной<br> организации GALA</p>
                     </div>
                     <div class="icon">
                         <img src="assets/images/icon4.png" alt="people">
-                        <p>Более 500 постоянных клиентов</p>
+                        <p>Более 500<br> постоянных клиентов</p>
                     </div>
                     <div class="icon">
                         <img src="assets/images/icon5.png" alt="headphones">
-                        <p>Более 12 000 часов устного перевода в год</p>
+                        <p>Более 12 000 часов<br> устного перевода в год</p>
                     </div>
                     <div class="icon">
                         <img src="assets/images/icon6.png" alt="notepad">
-                        <p>Более 120 000 переведенных страниц в год</p>
+                        <p>Более 120 000 переведенных<br> страниц в год</p>
                     </div>
                 </div>
             </div>
@@ -70,13 +71,32 @@
                             Переговоры с иностранными партнерами перенесли на
                             сегодняшний вечер, а под рукой нет переводчика?</p>
                         <h3>Решите задачу сейчас:</h3>
-                        <form action="#" method="post">
-                            <input type="text" class="name-inpt" placeholder="Введите имя:">
-                            <input type="tel" placeholder="Введите телефон:">
-                            <button><span>Нужен срочный перевод</span></button>
+                        <form id="contactform" data-toggle="validator">
+                            <input id="name" type="text" class="name-inpt" placeholder="Введите имя:">
+                            <input id="telephone" type="tel" placeholder="Введите телефон:">
+                            <button type="submit" id="submit" style="pointer-events: all;"><span>Нужен срочный перевод</span></button>
                         </form>
                     </div>
+                    <div class="inpt-conf">
+                        Спасибо, ваш запрос отправлен.
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="b-popup" id="popup">
+        <div class="b-popup-content">
+            <div class="small-container">
+                <h4>Заполните форму</h4>
+                <form name="form-1" data-toggle="validator">
+                    <input id="name0" type="text" placeholder="Введите имя:" required data-error="Please enter your name">
+                    <input id="telephone0" type="tel" placeholder="Введите телефон:" required data-error="Please enter your number">
+                    <input id="email0" type="email" placeholder="Введите e-mail:" required data-error="Please enter your e-mail">
+                    <button id="closebtn" type="submit" style="pointer-events: all;"><span>Заказать звонок</span></button>
+                    <div class="inpt-conf0">
+                        Спасибо, ваш запрос отправлен.
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -124,7 +144,7 @@
 <!--===================================================PART 3=========================================================-->
 
 <div class="part-3">
-    <div class="container">
+    <div class="container adaptive">
         <h3>САТ–технология</h3>
         <h2>Translation Memory</h2>
         <h4>СОКРАТИТЕ ДО 70% РАСХОДОВ НА УСЛУГИ ПЕРЕВОДА</h4>
@@ -134,7 +154,7 @@
             <div class="slides" style="margin-bottom: 0;">
                 <div class="slide">
                     <div class="image-slide">
-                        <a href="assets/images/slide1.png">
+                        <a rel="simplebox" href="assets/images/slide1.png">
                             <img src="assets/images/small-slide1.png" alt="">
                         </a>
                     </div>
@@ -146,7 +166,7 @@
                 </div>
                 <div class="slide">
                     <div class="image-slide">
-                        <a href="assets/images/slide2.png">
+                        <a rel="simplebox" href="assets/images/slide2.png">
                             <img src="assets/images/small-slide2.png" alt="">
                         </a>
                     </div>
@@ -158,7 +178,7 @@
                 </div>
                 <div class="slide">
                     <div class="image-slide">
-                        <a href="assets/images/slide3.png">
+                        <a rel="simplebox" href="assets/images/slide3.png">
                             <img src="assets/images/small-slide3.png" alt="">
                         </a>
                     </div>
@@ -170,7 +190,7 @@
                 </div>
                 <div class="slide">
                     <div class="image-slide">
-                        <a href="assets/images/slide4.png">
+                        <a rel="simplebox" href="assets/images/slide4.png">
                             <img src="assets/images/small-slide4.png" alt="">
                         </a>
                     </div>
@@ -182,7 +202,7 @@
                 </div>
                 <div class="slide">
                     <div class="image-slide">
-                        <a href="assets/images/slide5.png">
+                        <a rel="simplebox" href="assets/images/slide5.png">
                             <img src="assets/images/small-slide5.png" alt="">
                         </a>
                     </div>
@@ -208,7 +228,7 @@
                 <p>Экономия! При переводе<br> большого количества текстов,<br> Вы экономите - до 70%<br> своего бюджета!</p>
             </div>
         </div>
-        <div class="callback-button">
+        <div class="callback-button" id="callback2">
             <span>Заказать перевод</span>
         </div>
     </div>
@@ -226,7 +246,7 @@
         </div>
     </div>
     <div class="second-carousel">
-        <div class="container">
+        <div class=" adapt">
             <div class="small-carousel">
                 <div class="carousel-inner">
                     <div class="swing">
@@ -268,18 +288,21 @@
                                 <p>Загрузите необходимый файл, и наши специалисты <br> сообщат вам ответ в течение 5 минут.</p>
                             </div>
                             <div class="download-block">
-                                <form action="#" method="post">
+                                <form method="post" data-toggle="validator">
                                     <div class="inputs">
-                                        <input type="text" placeholder="Введите имя:">
-                                        <input type="tel" placeholder="Введите телефон:">
-                                        <input type="email" placeholder="Введите e-mail:">
+                                        <input id="name2" type="text" placeholder="Введите имя:" required data-error="Please enter your name">
+                                        <input id="telephone2" type="tel" placeholder="Введите телефон:" required data-error="Please enter your number">
+                                        <input id="email" type="email" placeholder="Введите e-mail:" required data-error="Please enter your e-mail">
                                     </div>
                                     <div class="download">
                                         <div class="file-upload">
                                             <button type="button">Загрузить файл</button>
                                             <input type="file">
                                         </div>
-                                        <button class="submit">Отправить</button>
+                                        <button id="send" type="submit" class="submit">Отправить</button>
+                                        <div class="inpt-conf2">
+                                            Спасибо, ваш файл отправлен.
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -384,11 +407,14 @@
                 <div class="vertical-block">
                     <div class="inside-block">
                         <h3>Мы предложим вам лучшее решение для вашей задачи:</h3>
-                        <form action="#">
-                            <input type="text" placeholder="Введите имя:">
-                            <input type="tel" placeholder="Введите телефон:">
-                            <input type="email" placeholder="Введите e-mail:">
-                            <button><span>заказать устный перевод</span></button>
+                        <form data-toggle="validator">
+                            <input id="name3" type="text" placeholder="Введите имя:" required data-error="Please enter your name">
+                            <input id="telephone3" type="tel" placeholder="Введите телефон:" required data-error="Please enter your number">
+                            <input id="email3" type="email" placeholder="Введите e-mail:" required data-error="Please enter your email">
+                            <button id="translate" type="submit"><span>заказать устный перевод</span></button>
+                            <div class="inpt-conf3">
+                                Спасибо, ваш запрос отправлен.
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -504,11 +530,14 @@
                     <div class="content-inside">
                         <h4>Остались вопросы?</h4>
                         <h5>Задайте их<br> нашему консультанту:</h5>
-                        <form action="#">
-                            <input type="text" placeholder="Введите имя:">
-                            <input type="email" placeholder="Введите e-mail:">
-                            <textarea name="question" cols="19" rows="4" placeholder="Ваш вопрос:"></textarea>
-                            <button><span>спросить</span></button>
+                        <form data-toggle="validator">
+                            <input id="name4" type="text" placeholder="Введите имя:" required data-error="Please enter your name">
+                            <input id="email4" type="email" placeholder="Введите e-mail:" required data-error="Please enter your e-mail">
+                            <textarea id="question" name="question" cols="19" rows="4" placeholder="Ваш вопрос:"></textarea>
+                            <button id="ask" type="submit" style="pointer-events: all;"><span>спросить</span></button>
+                            <div class="inpt-conf4">
+                                Спасибо, ваш запрос отправлен.
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -534,6 +563,26 @@
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="lib/slick-1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="lib/simplebox/simplebox_util.js"></script>
+<!--<script type="text/javascript">-->
+    <!--(function(){-->
+        <!--var boxes=[],els,i,l;-->
+        <!--if(document.querySelectorAll){-->
+            <!--els=document.querySelectorAll('a[rel=simplebox]');-->
+
+            <!--Box.getStyles('simplebox_css','lib/simplebox/simplebox.css');-->
+            <!--Box.getScripts('simplebox_js','lib/simplebox/simplebox.js',function(){-->
+                <!--simplebox.init();-->
+                <!--for(i=0,l=els.length;i<l;++i)-->
+                    <!--simplebox.start(els[i]);-->
+                <!--simplebox.start('a[rel=simplebox_group]');-->
+            <!--});-->
+        <!--}-->
+
+
+    <!--})();-->
+
+<!--</script>-->
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

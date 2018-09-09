@@ -146,17 +146,24 @@ h1, h2, h3, h4, h5, h6, p {
         color: #cb0e17;
       }
       .icons {
-        margin-top: 112px;
+        margin-top: 121px;
         display: flex;
         flex-wrap: wrap;
         .icon {
           flex: 33%;
+          max-width: 31%;
           text-align: center;
           font-size: 18px;
           &:nth-child(4),
           &:nth-child(5),
           &:nth-child(6){
             margin-top: 29px;
+          }
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            display: block;
+            width: 249px;
           }
         }
       }
@@ -221,6 +228,86 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.inpt-conf0 {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 22px 5px;
+  width: 230px;
+  display: none;
+}
+
+.inpt-conf {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 63px 35px;
+  display: none;
+}
+
+////////////////////////POPUP
+
+.b-popup {
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: fixed;
+  display: none;
+  z-index: 100;
+  transition: 1s;
+  top: 0;
+  .b-popup-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 392px;
+    height: 411px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px #000;
+    .small-container {
+      margin: 57px 80px;
+      h4 {
+        border-bottom: 0.5px solid #cb0e16;
+        color: #cb0e16;
+        font-size: 22px;
+        font-weight: 300;
+        padding-bottom: 20px;
+      }
+      form {
+        margin-top: 26px;
+        input {
+          background: url("../images/arrow.png") no-repeat 14px 18px;
+          border: 1px solid #808080;
+          color: #333333;
+          font-size: 14px;
+          font-weight: 300;
+          margin: 0 0 9px;
+          padding: 14px 28px 13px 30px;
+          border-radius: 3px;
+          outline: 0;
+        }
+        button {
+          width: 100%;
+          text-align: center;
+          margin: 20px 0 0;
+          background: #cb0e17;
+          text-transform: uppercase;
+          font-size: 15px;
+          color: #fff;
+          border-radius: 2px;
+          box-shadow: 0 0 5px 0 rgba(1, 1, 1, 0.75);
+          padding: 13px 0;
+          border: none;
+          outline: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
 /////////////////////////////////////////////////////////MAIN-MENU//////////////////////////////////////////////////////
 
 .main-menu {
@@ -246,7 +333,7 @@ h1, h2, h3, h4, h5, h6, p {
         }
         a {
           display: block;
-          padding: 15px 20px;
+          padding: 15px 0 15px 56px;
           font-size: 15px;
           color: #333333;
         }
@@ -468,6 +555,15 @@ h1, h2, h3, h4, h5, h6, p {
   border: 2px solid #bc2229;
 }
 
+#simplebox {
+  #simple-outer {
+    border-radius: 0;
+    #simple-close {
+      display: none !important;
+    }
+  }
+}
+
 /////////////////////////////////////////////////////PART 4/////////////////////////////////////////////////////////////
 
 .part-4 {
@@ -577,7 +673,7 @@ h1, h2, h3, h4, h5, h6, p {
                 max-width: 50%;
                 flex: 50%;
                 input {
-                  background: url("../images/arrow.png")no-repeat 14px 18px;
+                  background: url("../images/arrow.png") no-repeat 14px 18px;
                   border: 1px solid #808080;
                   color: #333333;
                   font-size: 14px;
@@ -604,7 +700,7 @@ h1, h2, h3, h4, h5, h6, p {
                   margin-left: 20px;
                   button {
                     border: none;
-                    background: url("../images/large-arrow.png")no-repeat 170px 10px;
+                    background: url("../images/large-arrow.png") no-repeat 170px 10px;
                     color: #cb0e17;
                     width: 100%;
                     font-size: 14px;
@@ -647,6 +743,20 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.adapt {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.inpt-conf2 {
+  font-size: 15px;
+  color: #333333;
+  font-weight: 300;
+  min-width: 230px;
+  margin: 10px 20px 0;
+  display: none;
+}
+
 ///////////////////////////////////////////////////PART 5//////////////////////////////////////////////////////////////
 
 .part-5 {
@@ -664,7 +774,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: #cb0e17;
   }
   .text {
-    width: 105%;
+    width: 104%;
     margin-top: 39px;
     .border {
       border: 0.5px solid #999999;
@@ -873,6 +983,13 @@ h1, h2, h3, h4, h5, h6, p {
       }
     }
   }
+}
+
+.inpt-conf3 {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 40px 2px;
+  display: none;
 }
 
 ////////////////////////////////////////////////////////PART 7//////////////////////////////////////////////////////////
@@ -1098,9 +1215,287 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.inpt-conf4 {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 6px 8px;
+  width: 230px;
+  display: none;
+}
 
 
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    width: 970px;
+    padding-right: 0;
+    padding-left: 0;
+  }
 
+  .part-1 .sides .left-side .icons .icon p {
+    width: auto;
+  }
+
+  .main-menu .shadow {
+    margin-top: -10px;
+  }
+
+  .part-2 {
+    background: url('../images/horse.png') no-repeat 50% 50%;
+  }
+
+  .part-2 .about-horse {
+    margin-top: 25px;
+  }
+
+  .part-2 .about-horse p {
+    margin-bottom: 15px;
+  }
+
+  .part-2 .about-horse h2 {
+    margin-top: 25px;
+  }
+
+  .part-3 .adaptive {
+    width: 90%;
+  }
+
+  .image-slide a img {
+    width: 400px;
+    height: 230px;
+  }
+
+  .my-dots {
+    bottom: 0;
+  }
+
+  .part-4 .second-carousel {
+    background: url("../images/background2.png") no-repeat 50% 50%;
+  }
+
+  .adapt {
+    width: 100%;
+  }
+
+  .part-4 .form .form-container .horizontal-block {
+    background: url('../images/block-horizontal.png') no-repeat scroll 0 0 / 100% 100%;
+  }
+
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download .submit {
+    width: 190px;
+    margin-left: 32px;
+  }
+
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download .file-upload button {
+    background: url('../images/large-arrow.png') no-repeat 163px 10px;
+  }
+
+  .part-5 .statistics .companies .items img {
+    height: 85px;
+  }
+
+  .part-5 .statistics .statistic .graphics img {
+    height: 170px;
+  }
+
+  .part-5 .text {
+    width: 100%;
+    margin-top: 39px;
+  }
+
+  .part-6 {
+    height: 52em;
+  }
+
+  .part-6 .both-elements .text-block .vertical-block {
+    margin-left: -15px;
+  }
+
+  .part-6 .both-elements .images-block .box-2 .vertical {
+    z-index: 10;
+  }
+
+  .part-6 .both-elements .images-block .box-3 .last {
+    left: 136px;
+    z-index: 1;
+  }
+
+  .part-8 .content .white-block {
+    margin-right: 0;
+  }
+
+  .part-8 .content .white-block .content-inside form textarea {
+    padding-right: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .container {
+    width: 750px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .part-1 {
+    background-size: cover;
+    height: 87em;
+  }
+
+  .part-1 .sides {
+    flex-wrap: wrap;
+  }
+
+  .part-1 .sides .left-side {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .part-1 .sides .left-side .icons .icon p {
+    width: 238px;
+  }
+
+  .part-1 .sides .left-side .icons .icon {
+    flex: 0;
+    margin-right: 15px;
+  }
+
+  .main-menu .shadow {
+    margin-top: -10px;
+  }
+
+  .part-2 {
+    background: url('../images/horse.png') no-repeat 50% 50%;
+  }
+
+  .part-2 .about-horse {
+    margin-top: 25px;
+  }
+
+  .part-2 .about-horse p {
+    font-size: 18px;
+  }
+
+  .part-2 .about-horse h2 {
+    font-size: 42px;
+  }
+
+  .image-slide a img {
+    width: 330px;
+    height: 230px;
+  }
+
+  .my-dots {
+    bottom: 0;
+  }
+
+  .part-3 {
+    height: 68.5em;
+  }
+
+  .part-4 .title {
+    width: 100%;
+    padding-top: 35px;
+  }
+
+  .adapt {
+    width: 750px;
+  }
+
+  .part-4 .second-carousel .small-carousel {
+    width: 100%;
+  }
+
+  .part-4 .form .form-container {
+    width: 100%;
+  }
+
+  .part-4 .form .form-container .horizontal-block {
+    background: url('../images/block-horizontal.png') no-repeat scroll 0 0 / 100% 100%;
+  }
+
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .inputs input {
+    padding: 15px 0 14px 32px;
+  }
+
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download .submit {
+    width: 165px;
+    margin-left: 24px;
+  }
+
+  .part-5 {
+    height: 58em;
+  }
+
+  .part-5 .text {
+    width: 100%;
+  }
+
+  .part-5 .statistics .companies .items img {
+    height: 69px;
+  }
+
+  .part-5 .statistics .statistic .graphics img {
+    height: 125px;
+    margin-top: 20px;
+  }
+
+  .part-6 {
+    background: url('../images/background3.png') no-repeat 35% 0;
+    height: 94em;
+    background-size: cover;
+  }
+
+  .part-6 .both-elements {
+    flex-wrap: wrap;
+  }
+
+  .part-6 .both-elements .images-block {
+    max-width: 100%;
+  }
+
+  .part-6 .both-elements .images-block .box-3 .last {
+    left: 238px;
+  }
+
+  .part-6 .both-elements .images-block .box-2 .vertical {
+    z-index: 10;
+  }
+
+  .part-6 .both-elements .text-block {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .part-6 .both-elements .text-block .vertical-block {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .part-7 {
+    height: 37em;
+  }
+
+  .part-7 .title {
+    max-width: 100%;
+  }
+
+  .part-7 .title .left-text {
+    flex: 1;
+  }
+
+  .part-7 .employees .carousel .carousel-start .translators .translator img {
+    height: 265px;
+  }
+
+  .part-8 .content .white-block {
+    margin-right: 10px;
+  }
+
+  .part-8 .content .white-block .content-inside form textarea {
+    padding-right: 40px;
+  }
+
+}
 
 
 
