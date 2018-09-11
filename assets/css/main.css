@@ -209,64 +209,75 @@ h1, h2, h3, h4, h5, h6, p {
 .b-popup {
   width: 100%;
   min-height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   position: fixed;
-  display: none;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
   z-index: 100;
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
   top: 0; }
-  .b-popup .b-popup-content {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 392px;
-    height: 411px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 2px;
-    -webkit-box-shadow: 0px 0px 10px #000;
-    box-shadow: 0px 0px 10px #000; }
-    .b-popup .b-popup-content .small-container {
-      margin: 57px 80px; }
-      .b-popup .b-popup-content .small-container h4 {
-        border-bottom: 0.5px solid #cb0e16;
-        color: #cb0e16;
-        font-size: 22px;
-        font-weight: 300;
-        padding-bottom: 20px; }
-      .b-popup .b-popup-content .small-container form {
-        margin-top: 26px; }
-        .b-popup .b-popup-content .small-container form input {
-          background: url("../images/arrow.png") no-repeat 14px 18px;
-          border: 1px solid #808080;
-          color: #333333;
-          font-size: 14px;
+  .b-popup .background-field {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed; }
+    .b-popup .background-field .b-popup-content {
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      width: 392px;
+      height: 411px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 2px;
+      -webkit-box-shadow: 0px 0px 10px #000;
+      box-shadow: 0px 0px 10px #000; }
+      .b-popup .background-field .b-popup-content .small-container {
+        margin: 57px 80px; }
+        .b-popup .background-field .b-popup-content .small-container h4 {
+          border-bottom: 0.5px solid #cb0e16;
+          color: #cb0e16;
+          font-size: 22px;
           font-weight: 300;
-          margin: 0 0 9px;
-          padding: 14px 28px 13px 30px;
-          border-radius: 3px;
-          outline: 0; }
-        .b-popup .b-popup-content .small-container form button {
-          width: 100%;
-          text-align: center;
-          margin: 20px 0 0;
-          background: #cb0e17;
-          text-transform: uppercase;
-          font-size: 15px;
-          color: #fff;
-          border-radius: 2px;
-          -webkit-box-shadow: 0 0 5px 0 rgba(1, 1, 1, 0.75);
-          box-shadow: 0 0 5px 0 rgba(1, 1, 1, 0.75);
-          padding: 13px 0;
-          border: none;
-          outline: 0;
-          cursor: pointer; }
+          padding-bottom: 20px; }
+        .b-popup .background-field .b-popup-content .small-container form {
+          margin-top: 26px; }
+          .b-popup .background-field .b-popup-content .small-container form input {
+            background: url("../images/arrow.png") no-repeat 14px 18px;
+            border: 1px solid #808080;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0 0 9px;
+            padding: 14px 28px 13px 30px;
+            border-radius: 3px;
+            outline: 0; }
+          .b-popup .background-field .b-popup-content .small-container form button {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0 0;
+            background: #cb0e17;
+            text-transform: uppercase;
+            font-size: 15px;
+            color: #fff;
+            border-radius: 2px;
+            -webkit-box-shadow: 0 0 5px 0 rgba(1, 1, 1, 0.75);
+            box-shadow: 0 0 5px 0 rgba(1, 1, 1, 0.75);
+            padding: 13px 0;
+            border: none;
+            outline: 0;
+            cursor: pointer; }
+
+.callback-open {
+  opacity: 1;
+  visibility: visible; }
 
 .main-menu {
   width: 100%;
@@ -293,7 +304,21 @@ h1, h2, h3, h4, h5, h6, p {
           display: block;
           padding: 15px 0 15px 56px;
           font-size: 15px;
-          color: #333333; }
+          color: #333333;
+          -webkit-transition: all .3s ease-out .2s;
+          -o-transition: all .3s ease-out .2s;
+          transition: all .3s ease-out .2s; }
+          .main-menu .menu ul li a:hover {
+            color: #cb0e17;
+            -webkit-transition: all .3s ease-out .1s;
+            -o-transition: all .3s ease-out .1s;
+            transition: all .3s ease-out .1s; }
+
+.hide_menu {
+  display: none; }
+
+.hamburger {
+  display: none; }
 
 .part-2 {
   background: url("../images/horse.png") no-repeat;
@@ -1222,3 +1247,396 @@ h1, h2, h3, h4, h5, h6, p {
     margin-right: 10px; }
   .part-8 .content .white-block .content-inside form textarea {
     padding-right: 40px; } }
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: auto; }
+  .main-menu .menu {
+    display: none; }
+  .hamburger {
+    display: inline-block;
+    float: right;
+    margin-top: 4px; }
+    .hamburger button {
+      position: relative;
+      padding: 9px 10px;
+      margin-top: 6px;
+      margin-right: 15px;
+      margin-bottom: 8px;
+      background-image: none;
+      background-color: transparent;
+      border: 1px solid #ddd;
+      border-radius: 4px; }
+      .hamburger button span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin-bottom: 4px;
+        border-radius: 1px;
+        background-color: #888; }
+        .hamburger button span:last-child {
+          margin-bottom: 0; }
+      .hamburger button:hover, .hamburger button:focus {
+        background-color: #ddd;
+        outline: 0; }
+  .hide_menu {
+    visibility: hidden;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    background: white;
+    text-align: center;
+    margin-top: -2px;
+    border-top: 1px solid #888888;
+    font-size: 15px;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
+    .hide_menu ul li a {
+      color: #333333;
+      position: relative;
+      display: block;
+      padding: 10px 15px; }
+      .hide_menu ul li a:hover {
+        color: #cb0e17;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s; }
+  .menu-open {
+    opacity: 1;
+    visibility: visible; }
+  .part-1 {
+    background-size: cover;
+    height: 146em; }
+  .part-1 .logo {
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center; }
+  .part-1 .languages ul {
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    right: 0;
+    text-align: center;
+    width: 100%; }
+  .part-1 .sides {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%; }
+  .part-1 .sides .left-side {
+    max-width: none;
+    margin-top: 100px; }
+  .part-1 .sides .left-side .icons .icon {
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+    max-width: none;
+    margin-bottom: 30px; }
+  .part-1 .sides .left-side .icons {
+    text-align: center;
+    margin-top: 80px;
+    display: block; }
+  .part-1 .sides .right-side {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%; }
+  .part-1 .sides .left-side .icons .icon p {
+    width: auto; }
+  .main-menu .shadow {
+    margin-top: -5px; }
+  .part-2 {
+    background: url("../images/horse.png") no-repeat 40% 100%; }
+  .part-2 .about-horse {
+    margin-top: 20px;
+    max-width: none; }
+  .part-2 .about-horse p {
+    font-size: 18px; }
+  .part-2 .about-horse h2 {
+    font-size: 45px;
+    margin-top: 30px; }
+  .part-3 {
+    height: 116em; }
+  .carouselCat .slides .slide .image-slide {
+    max-width: 0; }
+    .carouselCat .slides .slide .image-slide a img {
+      height: 200px; }
+  .carouselCat .slides .slide .text-slide {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    max-width: 100%;
+    margin-top: 200px;
+    margin-left: 0; }
+  .carouselCat .slides .slide .text-slide h1 {
+    margin-bottom: 0; }
+  .carouselCat .slides .slide .text-slide p {
+    margin-bottom: 30px; }
+  .my-dots {
+    bottom: -10px; }
+  .part-3 .qualities {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .part-3 .qualities .advantage {
+      -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%; }
+  .adapt {
+    width: auto; }
+  .part-4 {
+    height: auto; }
+  .part-4 .title {
+    width: 100%; }
+  .part-4 .title h1 {
+    float: none; }
+  .part-4 .second-carousel {
+    background-size: cover;
+    height: 52em; }
+  .part-4 .second-carousel .small-carousel {
+    width: auto;
+    padding-right: 15px;
+    padding-left: 15px; }
+  .part-4 .form .form-container {
+    width: 95%; }
+  .part-4 .form .form-container .horizontal-block {
+    background: url("../images/block-horizontal.png") no-repeat scroll 0 0/100% 100%; }
+  .part-4 .form .form-container .horizontal-block .describe {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .part-4 .form .form-container .horizontal-block .describe .text-block {
+    max-width: none;
+    width: 100%; }
+  .part-4 .form .form-container .horizontal-block .describe .text-block h3 {
+    margin-bottom: 10px; }
+  .part-4 .form .form-container .horizontal-block .describe .text-block p {
+    margin-bottom: 10px;
+    font-size: 14px; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block {
+    max-width: none;
+    width: 95%; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download {
+    margin-left: 60px;
+    max-width: none;
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download .submit {
+    margin-left: 24px;
+    width: 120px; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .inputs .last-inpt {
+    margin-bottom: 25px; }
+  .part-5 {
+    height: 133em; }
+  .part-5 .statistics .companies {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .part-5 .statistics .companies .items {
+    max-width: none;
+    margin-bottom: 25px; }
+  .part-5 .text {
+    width: 100%; }
+  .part-5 .statistics .companies .items {
+    -webkit-box-flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%; }
+  .part-5 .statistics .statistic {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .part-5 .statistics .statistic .graphics {
+    max-width: none;
+    -webkit-box-flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%; }
+  .part-6 {
+    height: 175em; }
+  .part-6 .both-elements {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .part-6 .both-elements .images-block {
+    max-width: none;
+    width: 100%; }
+  .part-6 .both-elements .images-block .box-1 .image img, .part-6 .both-elements .images-block .box-2 .image img, .part-6 .both-elements .images-block .box-3 .image img {
+    max-width: 100%; }
+  .part-6 .both-elements .images-block .box-1, .part-6 .both-elements .images-block .box-2, .part-6 .both-elements .images-block .box-3 {
+    height: auto;
+    display: block;
+    text-align: center; }
+  .part-6 .both-elements .images-block .box-1 .second, .part-6 .both-elements .images-block .box-2, .part-6 .both-elements .images-block .box-3 {
+    width: 253px;
+    margin: 0 auto; }
+  .part-6 .both-elements .images-block .box-1 .image span, .part-6 .both-elements .images-block .box-2 .image span, .part-6 .both-elements .images-block .box-3 .image span {
+    margin-left: 0;
+    font-size: 15px; }
+  .part-6 .both-elements .images-block .box-1 .first {
+    max-width: 513px;
+    min-width: 253px;
+    margin-left: auto;
+    margin-right: auto; }
+  .part-6 .both-elements .images-block .box-3 .image .text-7 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; }
+  .part-6 .both-elements .images-block .box-2 {
+    height: auto; }
+  .part-6 .both-elements .images-block .box-3 .image img {
+    max-width: 100%; }
+  .part-6 .both-elements .images-block .box-2 .vertical {
+    height: auto; }
+  .part-6 .both-elements .images-block .box-3 .last {
+    left: 0; }
+  .part-6 .both-elements .text-block {
+    width: 100%;
+    padding-left: 0; }
+  .part-6 .both-elements .text-block .vertical-block {
+    margin-left: auto;
+    margin-right: auto; }
+  .part-7 {
+    height: 137em; }
+  .part-7 .title {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: none; }
+  .part-7 .title .left-text {
+    width: 100%;
+    -webkit-box-flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%; }
+  .part-7 .employees .carousel .carousel-start .translators {
+    display: inline-block; }
+  .part-7 .employees .carousel .carousel-start .translators .translator {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+    max-width: 100%;
+    text-align: center; }
+  .arrow .slick-prev,
+  .arrow .slick-next {
+    top: 98%; }
+  .part-8 {
+    height: 48em;
+    background-size: cover; }
+  .part-8 .content {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .part-8 .content .white-block .content-inside form textarea {
+    padding-right: 40px; }
+  .part-8 .content .left-text {
+    padding-top: 70px; }
+  .part-8 .content .white-block {
+    margin-right: 0;
+    margin-left: auto; }
+  .part-8 .bottom .bottom-text ul {
+    padding-left: 20px; }
+  .part-8 .bottom .bottom-text p {
+    padding-right: 0; } }
+
+@media screen and (max-width: 480px) {
+  .part-2 .about-horse p {
+    font-size: 17px; }
+  .part-2 .about-horse h2 {
+    font-size: 38px; }
+  .part-3 {
+    height: 130em; }
+  .part-4 {
+    height: 90em; }
+  .part-4 .second-carousel {
+    height: 63.7em; }
+  .part-4 .form .form-container .horizontal-block {
+    background: url("../images/block-vertical.png") no-repeat scroll 0 0/100% 100%;
+    height: 32em; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .inputs {
+    max-width: none;
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+    margin: 0 20px; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download .file-upload {
+    height: 3em; }
+  .part-5 {
+    height: 140em; }
+  .part-6 {
+    height: 172em; }
+  .part-7 .employees .carousel .carousel-start .translators .translator {
+    width: 100%; }
+  .part-7 {
+    height: 133em; } }
+
+@media screen and (max-width: 390px) {
+  .part-1 {
+    height: 150em; }
+  .part-1 .languages h3 {
+    width: auto; }
+  .part-2 {
+    background-size: cover;
+    height: 39em; }
+  .part-2 .about-horse h2 {
+    font-size: 33px; }
+  .part-3 {
+    height: 133em; }
+  .part-4 {
+    height: 104em; }
+  .part-4 .second-carousel {
+    height: 72em; }
+  .part-4 .form .form-container .horizontal-block {
+    height: 36em; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .inputs {
+    margin: 0; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download {
+    margin-left: 30px; }
+  .part-5 .statistics .companies .items img {
+    height: 90px; }
+  .part-8 .content .white-block {
+    margin-right: auto; } }
+
+@media screen and (max-width: 359px) {
+  .part-1 .languages h1 {
+    font-size: 33px; }
+  .part-1 .sides .left-side {
+    max-width: 100%; }
+  .part-1 .sides .left-side h1 {
+    font-size: 43px; }
+  .part-1 .sides .right-side .background .inside form button {
+    font-size: 14px;
+    margin-left: 6px; }
+  .part-2 {
+    height: 42em; }
+  .part-2 .about-horse h2 {
+    font-size: 29px; }
+  .part-2 .about-horse p {
+    font-size: 16px; }
+  .part-3 {
+    height: 138em; }
+  .part-4 {
+    height: 108em; }
+  .part-4 .second-carousel {
+    height: 76em; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .inputs input {
+    padding-right: 0; }
+  .part-4 .form .form-container .horizontal-block .describe .download-block form .download {
+    margin-left: 17px; }
+  .part-4 .form .form-container .horizontal-block .describe {
+    margin-left: 50px; }
+  .part-5 .statistics .companies .items img {
+    height: 78px; }
+  .part-5 .statistics .statistic .graphics img {
+    height: 154px; }
+  .part-5 {
+    height: 147em; }
+  .part-6 .both-elements .text-block .vertical-block .inside-block form button {
+    font-size: 14px; }
+  .part-8 .content .white-block .content-inside form button {
+    margin-top: 6px; }
+  .part-8 .bottom .bottom-text ul li {
+    margin-right: 0; }
+  .part-8 .bottom .bottom-text ul {
+    padding-left: 0; } }

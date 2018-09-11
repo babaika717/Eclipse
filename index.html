@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="lib/simplebox/simplebox.css">
 </head>
 <body>
-<div class="part-1">
+<div class="part-1" id="main">
     <div class="container">
         <div class="logo">
             <img src="./assets/images/logo.png" alt="logotype">
@@ -74,7 +74,7 @@
                         <form id="contactform" data-toggle="validator">
                             <input id="name" type="text" class="name-inpt" placeholder="Введите имя:">
                             <input id="telephone" type="tel" placeholder="Введите телефон:">
-                            <button type="submit" id="submit" style="pointer-events: all;"><span>Нужен срочный перевод</span></button>
+                            <button type="submit" id="confirm" style="pointer-events: all;"><span>Нужен срочный перевод</span></button>
                         </form>
                     </div>
                     <div class="inpt-conf">
@@ -85,18 +85,20 @@
         </div>
     </div>
     <div class="b-popup" id="popup">
-        <div class="b-popup-content">
-            <div class="small-container">
-                <h4>Заполните форму</h4>
-                <form name="form-1" data-toggle="validator">
-                    <input id="name0" type="text" placeholder="Введите имя:" required data-error="Please enter your name">
-                    <input id="telephone0" type="tel" placeholder="Введите телефон:" required data-error="Please enter your number">
-                    <input id="email0" type="email" placeholder="Введите e-mail:" required data-error="Please enter your e-mail">
-                    <button id="closebtn" type="submit" style="pointer-events: all;"><span>Заказать звонок</span></button>
-                    <div class="inpt-conf0">
-                        Спасибо, ваш запрос отправлен.
-                    </div>
-                </form>
+        <div class="background-field">
+            <div class="b-popup-content">
+                <div class="small-container">
+                    <h4>Заполните форму</h4>
+                    <form name="form-1" data-toggle="validator">
+                        <input id="name0" type="text" placeholder="Введите имя:" required data-error="Please enter your name">
+                        <input id="telephone0" type="tel" placeholder="Введите телефон:" required data-error="Please enter your number">
+                        <input id="email0" type="email" placeholder="Введите e-mail:" required data-error="Please enter your e-mail">
+                        <button id="closebtn" type="submit" style="pointer-events: all;"><span>Заказать звонок</span></button>
+                        <div class="inpt-conf0">
+                            Спасибо, ваш запрос отправлен.
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -109,12 +111,27 @@
     <div class="container">
         <div class="menu">
             <ul>
-                <li><a href="#" class="menu-active">Главная</a></li>
-                <li><a href="#">Письменные переводы</a></li>
-                <li><a href="#">Устные переводы</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="#main" class="menu-active">Главная</a></li>
+                <li><a href="#written-translations">Письменные переводы</a></li>
+                <li><a href="#oral-translations">Устные переводы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
             </ul>
         </div>
+        <div class="hamburger">
+            <button type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="hide_menu">
+        <ul>
+            <li><a href="#main">Главная</a></li>
+            <li><a href="#written-translations">Письменные переводы</a></li>
+            <li><a href="#oral-translations">Устные переводы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
     </div>
 </div>
 
@@ -143,7 +160,7 @@
 
 <!--===================================================PART 3=========================================================-->
 
-<div class="part-3">
+<div class="part-3" id="written-translations">
     <div class="container adaptive">
         <h3>САТ–технология</h3>
         <h2>Translation Memory</h2>
@@ -292,7 +309,7 @@
                                     <div class="inputs">
                                         <input id="name2" type="text" placeholder="Введите имя:" required data-error="Please enter your name">
                                         <input id="telephone2" type="tel" placeholder="Введите телефон:" required data-error="Please enter your number">
-                                        <input id="email" type="email" placeholder="Введите e-mail:" required data-error="Please enter your e-mail">
+                                        <input id="email" class="last-inpt" type="email" placeholder="Введите e-mail:" required data-error="Please enter your e-mail">
                                     </div>
                                     <div class="download">
                                         <div class="file-upload">
@@ -359,16 +376,16 @@
 
 <!--==========================================================PART 6=================================================-->
 
-<div class="part-6">
+<div class="part-6" id="oral-translations">
     <div class="container">
         <div class="both-elements">
             <div class="images-block">
                 <div class="box-1">
-                    <div class="image">
+                    <div class="image first">
                         <img src="assets/images/image1.png" alt="">
                         <span>Переводчики-консультанты,<br> которые будут сопровождать вас<br> в заграничной командировке</span>
                     </div>
-                    <div class="image">
+                    <div class="image second">
                         <img src="assets/images/image2.png" alt="">
                         <span class="text-2">Переводчики-проводники<br> из числа местных жителей,<br>
                             которые встретят вас<br> после перелета в другую<br> страну, будь то Швеция, Германия, Китай или Конго</span>
@@ -518,7 +535,7 @@
 <!--==================================================FOOTER=========================================================-->
 
 <footer>
-    <div class="part-8">
+    <div class="part-8" id="contacts">
         <div class="container">
             <div class="content">
                 <div class="left-text">
@@ -564,25 +581,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="lib/slick-1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="lib/simplebox/simplebox_util.js"></script>
-<!--<script type="text/javascript">-->
-    <!--(function(){-->
-        <!--var boxes=[],els,i,l;-->
-        <!--if(document.querySelectorAll){-->
-            <!--els=document.querySelectorAll('a[rel=simplebox]');-->
-
-            <!--Box.getStyles('simplebox_css','lib/simplebox/simplebox.css');-->
-            <!--Box.getScripts('simplebox_js','lib/simplebox/simplebox.js',function(){-->
-                <!--simplebox.init();-->
-                <!--for(i=0,l=els.length;i<l;++i)-->
-                    <!--simplebox.start(els[i]);-->
-                <!--simplebox.start('a[rel=simplebox_group]');-->
-            <!--});-->
-        <!--}-->
-
-
-    <!--})();-->
-
-<!--</script>-->
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

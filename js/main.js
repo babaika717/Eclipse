@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    //FIRST
+    //FIRST CAROUSEL
     $('.slides').slick({
         autoplay: true,
         arrows: false,
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dotsClass: "my-dots"
     });
 
-    //SECOND
+    //SECOND CAROSUEL
     $('.carousel-inner').slick({
         autoplay: true,
         arrows: false,
@@ -23,13 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
         dotsClass: "my-dots"
     });
 
-    //THIRD
+    //THIRD CAROUSEL
     $('.carousel-start').slick({
         autoplay: true,
         arrows: true,
         infinite: true,
         pauseOnHover: false,
-        draggable: false,
         autoplaySpeed: 3000,
         appendArrows: '.arrow',
         prevArrow: '<span class="slick-arrow slick-prev navigate"><img src="./assets/images/arrow-left.png"></span>',
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    //CALLBACK
+    ////////CALLBACK
 
     var
         callback = document.getElementById('callback'),
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         inptConf4 = document.getElementsByClassName('inpt-conf4')[0],
         question = document.getElementById('question'),
         ask = document.getElementById('ask'),
-        submit = document.getElementById('submit'),
+        submit = document.getElementById('confirm'),
         name0 = document.getElementById('name0'),
         name = document.getElementById('name'),
         name2 = document.getElementById('name2'),
@@ -68,19 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
         telephone2 = document.getElementById('telephone2'),
         telephone3 = document.getElementById('telephone3');
 
-
-    callback.addEventListener('click', function () {
-        popup.style.display = 'block';
-    });
-
-    callback2.addEventListener('click', function () {
-        popup.style.display = 'block';
-    });
-
-    close.addEventListener('click', function () {
-        popup.style.display = 'none';
-        inptConf0.style.display = 'block';
-    });
 
     submit.addEventListener('click',function () {
         inptConf.style.display = 'block';
@@ -206,7 +192,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })();
 
+    //////////////MAIN-MENU
 
+    $('.hamburger, .hide_menu').click(function(){
+        $('.hide_menu').toggleClass('menu-open');
+    });
 
+    ///////CALLBACK BUTTONS
+
+    $('.callback, #callback2').click(function(){
+        $('#popup').toggleClass('callback-open');
+    });
 
 });
