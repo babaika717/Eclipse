@@ -50,6 +50,7 @@ h1, h2, h3, h4, h5, h6, p {
   background: url("../images/background1.png") no-repeat;
   width: 100%;
   height: 55em;
+  background-size: cover;
   .logo {
     display: inline-block;
     padding-top: 30px;
@@ -92,16 +93,18 @@ h1, h2, h3, h4, h5, h6, p {
       width: 20em;
       text-align: right;
     }
-    h1 {
+    a {
       font-size: 35px;
       color: rgb(203, 14, 23);
       line-height: 1.457;
       font-weight: 400;
     }
     p {
-      font-size: 20px;
-      color: rgb(203, 14, 23);
-      line-height: 0.7;
+      a {
+        font-size: 20px;
+        color: rgb(203, 14, 23);
+        line-height: 0.7;
+      }
     }
     .callback {
       border-radius: 2px;
@@ -109,13 +112,13 @@ h1, h2, h3, h4, h5, h6, p {
       background: #cb0e17;
       border: none;
       margin-top: 30px;
+      cursor: pointer;
       span {
         padding: 12px 30px;
         display: block;
         color: #fff;
         font-size: 15px;
         text-transform: uppercase;
-        cursor: pointer;
       }
     }
   }
@@ -216,9 +219,10 @@ h1, h2, h3, h4, h5, h6, p {
               padding: 4px 10px;
               border: none;
               cursor: pointer;
+              @-moz-document url-prefix() {padding: 4px 21px;}
               span {
                 display: block;
-                line-height: 2.399;
+                line-height: 38px;
               }
             }
           }
@@ -250,29 +254,22 @@ h1, h2, h3, h4, h5, h6, p {
   min-height: 100%;
   overflow: hidden;
   position: fixed;
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 100;
-  transition: 1s;
+  display: none;
+  transition: all 1s;
   top: 0;
-  .background-field {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: fixed;
+  z-index: 20;
     .b-popup-content {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       position: absolute;
+      z-index: 99;
       width: 392px;
       height: 411px;
       padding: 10px;
       background-color: #fff;
       border-radius: 2px;
-      box-shadow: 0px 0px 10px #000;
+      box-shadow: 0 0 10px #000;
       .small-container {
         margin: 57px 80px;
         h4 {
@@ -314,13 +311,15 @@ h1, h2, h3, h4, h5, h6, p {
       }
     }
   }
-}
 
-.callback-open {
-  opacity: 1;
-  visibility: visible;
+.background-field {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  z-index: 89;
 }
-
 
 /////////////////////////////////////////////////////////MAIN-MENU//////////////////////////////////////////////////////
 
@@ -375,6 +374,7 @@ h1, h2, h3, h4, h5, h6, p {
   background: url("../images/horse.png") no-repeat;
   width: 100%;
   height: 36em;
+  background-size: cover;
   .about-horse {
     max-width: 56%;
     float: right;
@@ -579,7 +579,7 @@ h1, h2, h3, h4, h5, h6, p {
   opacity: 1;
   color: #bc2229;
   position: relative;
-  border: 2px solid #bc2229;
+  border: 2.3px solid #bc2229;
 }
 
 #simplebox {
@@ -631,6 +631,7 @@ h1, h2, h3, h4, h5, h6, p {
     background: url("../images/background2.png") no-repeat;
     width: 100%;
     height: 42.5em;
+    background-size: cover;
     .small-carousel {
       position: relative;
       width: 70%;
@@ -1023,7 +1024,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .part-7 {
   width: 100%;
-  height: 47.6em;
+  height: 42.6em;
   .title {
     display: flex;
     max-width: 50%;
@@ -1103,6 +1104,67 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+////////////////////////////////////////////CAROUSEL FOR SMALL DEVICES//////////////////////////////////////////////////
+
+.smalldevices-carousel {
+  position: relative;
+  margin-top: 44px;
+  display: none;
+  .carousel-init {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .people {
+      display: inline-flex;
+      width: 100%;
+      .person {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        img {
+          margin-bottom: 25px;
+          height: 380px;
+        }
+        span {
+          font-size: 15px;
+          color: #333333;
+          font-weight: 400;
+          padding: 0 25px;
+          display: block;
+        }
+        p {
+          font-size: 15px;
+          color: #333333;
+          font-weight: 300;
+          padding: 10px 25px 0;
+        }
+      }
+    }
+  }
+}
+
+.arrow2 .slick-prev:hover, .arrow2 .slick-next:hover {
+  color: white;
+}
+
+.arrow2 .slick-prev:before, .arrow2 .slick-next:before {
+  content: "";
+}
+
+.arrow2 .slick-prev {
+  left: 0;
+  top: 91%;
+}
+
+.arrow2 .slick-next {
+  right: 0;
+  top: 91%;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .arrow .slick-prev:hover, .arrow .slick-next:hover {
   color: white;
 }
@@ -1121,25 +1183,42 @@ h1, h2, h3, h4, h5, h6, p {
   top: 91%;
 }
 
+////////////////////////////////////////////////////////////PART 8//////////////////////////////////////////////////////
+
 .part-8 {
-  background: url("../images/map.png") no-repeat;
-  width: 100%;
-  height: 548px;
+  .map {
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    iframe {
+      height: 523px;
+    }
+  }
   .content {
     display: flex;
+    position: relative;
     .left-text {
       text-align: right;
       color: #cb0e17;
-      padding-top: 282px;
-      flex: 50%;
+      margin-top: 282px;
+      flex: 2;
+      z-index: 10;
+      margin-left: auto;
+      height: 0;
       h5 {
-        font-size: 25px;
-        font-weight: 600;
+        a {
+          font-size: 25px;
+          font-weight: 600;
+          color: #cb0e17;
+        }
       }
       h6 {
-        font-size: 22px;
-        font-weight: 400;
-        margin-bottom: 21px;
+        a {
+          font-size: 22px;
+          font-weight: 400;
+          margin-bottom: 21px;
+          color: #cb0e17;
+        }
       }
       p {
         font-size: 22px;
@@ -1147,11 +1226,12 @@ h1, h2, h3, h4, h5, h6, p {
       }
     }
     .white-block {
-      flex: 50%;
+      flex: 3;
       background: url("../images/block-vertical.png") no-repeat;
       max-width: 298px;
       min-height: 498px;
       margin: 25px 92px 0 18px;
+      z-index: 10;
       .content-inside {
         padding: 54px 31px 0;
         h4 {
@@ -1187,8 +1267,12 @@ h1, h2, h3, h4, h5, h6, p {
             margin: 0 0 9px;
             padding: 14px 29px 18px 30px;
             border-radius: 3px;
+            padding-right: 30px !important;
             outline: 0;
             resize: none;
+            @-moz-document url-prefix() {
+              padding-right: 41px !important;
+            }
           }
           button {
             width: 100%;
@@ -1205,6 +1289,9 @@ h1, h2, h3, h4, h5, h6, p {
             border: none;
             outline: 0;
             cursor: pointer;
+            @-moz-document url-prefix() {
+              margin: 20px 4px;
+            }
           }
         }
       }
@@ -1242,6 +1329,10 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.part-8 .content .white-block .content-inside form textarea {
+  padding-right: 50px;
+}
+
 .inpt-conf4 {
   font-size: 15px;
   font-weight: 300;
@@ -1250,6 +1341,28 @@ h1, h2, h3, h4, h5, h6, p {
   display: none;
 }
 
+
+
+@media screen and (max-width: 2500px) {
+  .main-menu .shadow {
+    margin-top: -25px;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .main-menu .shadow {
+    margin-top: -22px;
+  }
+}
+
+@media screen and (max-width: 1700px){
+  .part-2 {
+    background: url('../images/horse.png') no-repeat 40% 100%;
+  }
+  .main-menu .shadow {
+    margin-top: -14px;
+  }
+}
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .container {
@@ -1346,6 +1459,14 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 1;
   }
 
+  .part-6 .both-elements .images-block .box-3 .image .text-7 {
+    left: 17%;
+  }
+
+  .part-6 .both-elements .images-block .box-1 .image .text-2 {
+  top: 10%;
+}
+
   .part-8 .content .white-block {
     margin-right: 0;
   }
@@ -1417,6 +1538,13 @@ h1, h2, h3, h4, h5, h6, p {
 
   .part-3 {
     height: 68.5em;
+  }
+
+  .part-3 p, .part-3 .qualities .advantage p,
+  .carouselCat .slides .slide .text-slide p,
+  .part-6 .both-elements .text-block p,
+  .part-8 .content .white-block .content-inside h5 {
+    font-size: 18px;
   }
 
   .part-4 .title {
@@ -1527,6 +1655,14 @@ h1, h2, h3, h4, h5, h6, p {
 
   .container {
     width: auto;
+  }
+
+  .smalldevices-carousel {
+    display: block;
+  }
+
+  .carousel {
+    display: none;
   }
 
   .main-menu .menu {
@@ -1655,17 +1791,25 @@ h1, h2, h3, h4, h5, h6, p {
     margin-top: -5px;
   }
 
+  .part-1 .sides .left-side .icons .icon p,
+  .part-3 p, .part-3 .qualities .advantage p,
+  .carouselCat .slides .slide .text-slide p,
+  .part-6 .both-elements .text-block p,
+  .part-8 .content .white-block .content-inside h5 {
+    font-size: 15px;
+  }
+
   .part-2 {
     background: url('../images/horse.png') no-repeat 40% 100%;
   }
 
   .part-2 .about-horse {
-    margin-top: 20px;
+    margin-top: 160px;
     max-width: none;
   }
 
   .part-2 .about-horse p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .part-2 .about-horse h2 {
@@ -1674,7 +1818,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-3 {
-    height: 116em;
+    height: 107em;
   }
 
   .carouselCat .slides .slide .image-slide {
@@ -1764,9 +1908,18 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 14px;
   }
 
+  .part-4 .second-carousel .small-carousel .carousel-inner .swing p {
+    font-size: 15px;
+  }
+
   .part-4 .form .form-container .horizontal-block .describe .download-block {
     max-width: none;
     width: 95%;
+  }
+
+  .part-1 .sides .right-side .background .inside h3,
+  .part-4 .form .form-container .horizontal-block .describe .text-block h3 {
+    font-size: 20px;
   }
 
   .part-4 .form .form-container .horizontal-block .describe .download-block form .download {
@@ -1799,10 +1952,16 @@ h1, h2, h3, h4, h5, h6, p {
 
   .part-5 .text {
     width: 100%;
+    p {
+      font-size: 15px;
+    }
   }
 
   .part-5 .statistics .companies .items {
     flex: 100%;
+    p {
+      font-size: 15px;
+    }
   }
 
   .part-5 .statistics .statistic {
@@ -1887,7 +2046,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-7 {
-    height: 137em;
+    height: 48em;
   }
 
   .part-7 .title {
@@ -1923,6 +2082,14 @@ h1, h2, h3, h4, h5, h6, p {
     background-size: cover;
   }
 
+  .part-8 {
+    .map {
+      iframe {
+        height: 768px;
+      }
+    }
+  }
+
   .part-8 .content {
     flex-wrap: wrap;
   }
@@ -1932,12 +2099,14 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-8 .content .left-text {
-    padding-top: 70px;
+    padding-top: 0;
+    margin-top: 450px;
   }
 
   .part-8 .content .white-block {
     margin-right: 0;
     margin-left: auto;
+    margin-top: 200px;
   }
 
   .part-8 .bottom .bottom-text ul {
@@ -1946,6 +2115,13 @@ h1, h2, h3, h4, h5, h6, p {
 
   .part-8 .bottom .bottom-text p {
     padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 542px) {
+  .part-8 .content .left-text {
+    flex: 100%;
+    margin-top: 40px;
   }
 }
 
@@ -2003,7 +2179,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-7 {
-    height: 133em;
+    height: 48em;
   }
 }
 

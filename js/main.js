@@ -35,6 +35,17 @@ document.addEventListener('DOMContentLoaded', function () {
         nextArrow: '<span class="slick-arrow slick-next navigate"><img src="./assets/images/arrow-right.png"></span>'
     });
 
+    //THIRD FOR SMALL DEVICES
+    $('.carousel-init').slick({
+        autoplay: true,
+        arrows: true,
+        infinite: true,
+        pauseOnHover: false,
+        autoplaySpeed: 3000,
+        appendArrows: '.arrow2',
+        prevArrow: '<span class="slick-arrow slick-prev navigate"><img src="./assets/images/arrow-left.png"></span>',
+        nextArrow: '<span class="slick-arrow slick-next navigate"><img src="./assets/images/arrow-right.png"></span>'
+    });
 
     ////////CALLBACK
 
@@ -198,10 +209,26 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.hide_menu').toggleClass('menu-open');
     });
 
-    ///////CALLBACK BUTTONS
+    ////////////POPUP`s
 
-    $('.callback, #callback2').click(function(){
-        $('#popup').toggleClass('callback-open');
+    $(function () {
+        $(".callback, #callback2").on("click", function(){
+            $("#popup").fadeIn(700);
+        });
+
+        $(".background-field").on("click", function(){
+            $("#popup").fadeOut(700);
+        });
     });
+
+
+
+
+
+
+
+
+
+
 
 });
