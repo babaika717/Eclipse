@@ -1362,6 +1362,9 @@ h1, h2, h3, h4, h5, h6, p {
   .main-menu .shadow {
     margin-top: -14px;
   }
+  .part-8 .content .white-block .content-inside form textarea {
+    padding-right: 40px !important;
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
@@ -1472,7 +1475,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-8 .content .white-block .content-inside form textarea {
-    padding-right: 40px;
+    padding-right: 40px !important;
   }
 }
 
@@ -1647,7 +1650,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-8 .content .white-block .content-inside form textarea {
-    padding-right: 40px;
+    padding-right: 40px !important;
   }
 }
 
@@ -1694,7 +1697,7 @@ h1, h2, h3, h4, h5, h6, p {
           margin-bottom: 0;
         }
       }
-      &:hover, &:focus{
+      &:hover, &:focus {
         background-color: #ddd;
         outline: 0;
       }
@@ -1736,7 +1739,7 @@ h1, h2, h3, h4, h5, h6, p {
 
   .part-1 {
     background-size: cover;
-    height: 146em;
+    height: 140em;
   }
 
   .part-1 .logo {
@@ -1804,7 +1807,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-2 .about-horse {
-    margin-top: 160px;
+    margin-top: 35px;
     max-width: none;
   }
 
@@ -2095,7 +2098,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-8 .content .white-block .content-inside form textarea {
-    padding-right: 40px;
+    padding-right: 40px !important;
   }
 
   .part-8 .content .left-text {
@@ -2126,6 +2129,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media screen and (max-width: 480px) {
+  .part-1 .sides .right-side .background .inside form button {
+    padding: 4px 8px;
+  }
 
   .part-2 .about-horse p {
     font-size: 17px;
@@ -2136,7 +2142,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-3 {
-    height: 130em;
+    height: 118em;
   }
 
   .part-4 {
@@ -2167,7 +2173,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-5 {
-    height: 140em;
+    height: 129em;
   }
 
   .part-6 {
@@ -2181,6 +2187,10 @@ h1, h2, h3, h4, h5, h6, p {
   .part-7 {
     height: 48em;
   }
+
+  .part-8 .content .white-block .content-inside form textarea {
+    padding-right: 40px !important;
+  }
 }
 
 @media screen and (max-width: 390px) {
@@ -2190,6 +2200,10 @@ h1, h2, h3, h4, h5, h6, p {
 
   .part-1 .languages h3 {
     width: auto;
+  }
+
+  .part-1 .sides .right-side .background .inside form button {
+    padding: 4px 8px;
   }
 
   .part-2 {
@@ -2202,15 +2216,15 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-3 {
-    height: 133em;
+    height: 124em;
   }
 
   .part-4 {
-    height: 104em;
+    height: 106em;
   }
 
   .part-4 .second-carousel {
-    height: 72em;
+    height: 74em;
   }
 
   .part-4 .form .form-container .horizontal-block {
@@ -2232,9 +2246,13 @@ h1, h2, h3, h4, h5, h6, p {
   .part-8 .content .white-block {
     margin-right: auto;
   }
+
+  .part-8 .content .white-block .content-inside form textarea {
+    padding-right: 40px !important;
+  }
 }
 
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 360px) {
   .part-1 .languages h1 {
     font-size: 33px;
   }
@@ -2265,7 +2283,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-3 {
-    height: 138em;
+    height: 125em;
   }
 
   .part-4 {
@@ -2297,7 +2315,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .part-5 {
-    height: 147em;
+    height: 129em;
   }
 
   .part-6 .both-elements .text-block .vertical-block .inside-block form button {
